@@ -1,0 +1,6 @@
+# Project exclude paths
+/Chat/target/
+/Core/target/
+/Essentials/target/
+/Hub/target/
+/Moderation/target/
