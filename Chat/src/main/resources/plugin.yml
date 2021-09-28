@@ -1,0 +1,5 @@
+name: HuskyChat
+main: com.huskydreaming.chat.HuskyChat
+version: 1.0
+api-version: 1.17
+author: HuskyDreaming

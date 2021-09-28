@@ -5,6 +5,7 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.RemovalListener;
 import com.google.gson.reflect.TypeToken;
+import com.huskydreaming.core.resources.Registries;
 import com.huskydreaming.core.resources.interfaces.Manager;
 import com.huskydreaming.core.resources.interfaces.Registry;
 import com.huskydreaming.core.utilities.Json;
@@ -91,7 +92,7 @@ public class PunishmentManager implements Manager {
     public void deserialize() {
         plugin.getServer().getOnlinePlayers().forEach(this::deserialize);
 
-        Registry.Register(plugin,
+        Registries.register(plugin,
                 new KickCommand(this),
                 new BanCommand(this),
                 new MuteCommand(this),

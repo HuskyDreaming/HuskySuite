@@ -1,6 +1,7 @@
 package com.huskydreaming.essentials.managers;
 
 import com.google.gson.reflect.TypeToken;
+import com.huskydreaming.core.resources.Registries;
 import com.huskydreaming.core.resources.interfaces.Manager;
 import com.huskydreaming.core.resources.interfaces.Registry;
 import com.huskydreaming.core.utilities.Json;
@@ -47,7 +48,7 @@ public class HomeManager implements Manager {
 
     @Override
     public void deserialize() {
-        Registry.Register(plugin,
+        Registries.register(plugin,
                 // Commands
                 new DelHomeCommand(this),
                 new HomeCommand(this),

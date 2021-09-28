@@ -1,6 +1,7 @@
 package com.huskydreaming.essentials.managers;
 
 import com.google.gson.reflect.TypeToken;
+import com.huskydreaming.core.resources.Registries;
 import com.huskydreaming.core.resources.interfaces.Manager;
 import com.huskydreaming.core.resources.interfaces.Registry;
 import com.huskydreaming.core.utilities.Json;
@@ -29,7 +30,7 @@ public class WarpManager implements Manager {
         warps = Json.read(plugin, "warps", new TypeToken<Map<String, Position>>(){}.getType());
         if(warps == null) warps = new HashMap<>();
 
-        Registry.Register(plugin,
+        Registries.register(plugin,
                 new DelWarpCommand(this),
                 new SetWarpCommand(this),
                 new WarpCommand(this)

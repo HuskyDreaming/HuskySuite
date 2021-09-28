@@ -3,6 +3,10 @@ package com.huskydreaming.core.utilities;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
+import com.huskydreaming.core.serializers.BlockSerializer;
+import com.huskydreaming.core.serializers.LocationSerializer;
+import org.bukkit.Location;
+import org.bukkit.block.Block;
 import org.bukkit.plugin.Plugin;
 
 import java.io.BufferedReader;
@@ -16,7 +20,11 @@ import java.nio.file.Paths;
 
 public class Json {
 
-    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    private static final Gson GSON = new GsonBuilder()
+            .registerTypeAdapter(Location.class, new LocationSerializer())
+            .registerTypeAdapter(Block.class, new BlockSerializer())
+            .setPrettyPrinting()
+            .create();
 
     public static void write(Plugin plugin, String fileName, Object object) {
         Path path = Paths.get(plugin.getDataFolder() + "/" + fileName + ".json");

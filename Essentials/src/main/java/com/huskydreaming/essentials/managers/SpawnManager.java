@@ -1,5 +1,6 @@
 package com.huskydreaming.essentials.managers;
 
+import com.huskydreaming.core.resources.Registries;
 import com.huskydreaming.core.resources.interfaces.Manager;
 import com.huskydreaming.core.resources.interfaces.Registry;
 import com.huskydreaming.core.utilities.Json;
@@ -23,7 +24,7 @@ public class SpawnManager implements Manager {
     @Override
     public void deserialize() {
         spawn = Json.read(plugin, "spawn", Position.class);
-        Registry.Register(plugin,
+        Registries.register(plugin,
                 // Commands
                 new DelSpawnCommand(this),
                 new SetSpawnCommand(this),

@@ -4,6 +4,7 @@ import com.huskydreaming.chat.commands.ChatClearCommand;
 import com.huskydreaming.chat.commands.ChatLockCommand;
 import com.huskydreaming.chat.listeners.ChatListener;
 import com.huskydreaming.chat.listeners.PlayerListener;
+import com.huskydreaming.core.resources.Registries;
 import com.huskydreaming.core.resources.interfaces.Registry;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -23,13 +24,13 @@ public class HuskyChat extends JavaPlugin {
                 "Did not find PlaceHolderAPI. Ignoring placeholders...")
         );
 
-        Registry.Register(this,
+        Registries.register(this,
                 new ChatClearCommand(),
                 new ChatListener(this),
                 new ChatLockCommand(this),
                 new PlayerListener(this)
         );
-        Registry.registries(this);
+        Registries.log(this);
     }
 
     @Override

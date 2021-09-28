@@ -15,23 +15,10 @@ public class Chat {
         return ChatColor.translateAlternateColorCodes('&', message);
     }
 
-    /**
-     * Capitalizes the first word of a string.
-     *
-     * @param message String
-     * @return String
-     */
     public static String Capitalize(String message) {
         return message.substring(0, 1).toUpperCase() + message.substring(1);
     }
 
-    /**
-     * Converts parameters into specified strings.
-     *
-     * @param message    String
-     * @param parameters String Array
-     * @return String
-     */
     public static String parameterize(String message, String... parameters) {
         for (int i = 0; i < parameters.length; i++) {
             message = message.replace("{" + i + "}", parameters[i]);
@@ -39,12 +26,6 @@ public class Chat {
         return message;
     }
 
-    /**
-     * Get the offline player based on name.
-     *
-     * @param name String
-     * @return OfflinePlayer
-     */
     public static OfflinePlayer offlinePlayer(String name) {
         for (OfflinePlayer offlinePlayer : Bukkit.getOfflinePlayers()) {
             if (offlinePlayer.hasPlayedBefore()) {

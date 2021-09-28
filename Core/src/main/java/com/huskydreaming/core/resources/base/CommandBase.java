@@ -7,6 +7,7 @@ import org.bukkit.command.CommandMap;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -21,7 +22,7 @@ public abstract class CommandBase extends Command implements Registry {
     }
 
     @Override
-    public boolean execute(CommandSender commandSender, String s, String[] strings) {
+    public boolean execute(@NotNull CommandSender commandSender, String s, String[] strings) {
         if (commandSender instanceof Player player) {
             if (!player.hasPermission(Objects.requireNonNull(getPermission()))) {
                 player.sendMessage("You do not seem to have permissions.");

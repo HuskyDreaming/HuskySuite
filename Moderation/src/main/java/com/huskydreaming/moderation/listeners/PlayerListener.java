@@ -30,7 +30,9 @@ public class PlayerListener extends ListenerBase {
 
     @EventHandler
     public void onMute(AsyncPlayerChatEvent event) {
-        if(punishmentManager.hasType(event.getPlayer(), Punishment.Type.MUTE)) {
+        Player player = event.getPlayer();
+        if(punishmentManager.hasType(player, Punishment.Type.MUTE)) {
+            player.sendMessage("You have been muted.");
             event.setCancelled(true);
         }
     }

@@ -7,11 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Chat" />
+        <module name="Proxy" />
         <module name="Essentials" />
         <module name="Hub" />
         <module name="Moderation" />
         <module name="Core" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="HuskyProxy" target="16" />
+    </bytecodeTargetLevel>
   </component>
 </project>
